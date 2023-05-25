@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./styles.css";
+import Label from "./Label";
+import Button from "./Button";
 
-function App() {
+const App = () => {
+  const [name, setName] = useState("Hello");
+
+  const obj = {
+    firstName: "René",
+    lastName: "Krewinkel",
+  };
+
+  const showAlert = () => {
+    setName("Pietje");
+  };
+
+  const naam = `${obj.firstName} ${obj.lastName}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div style={{ color: "#F00" }}>{name.toLowerCase()}</div>
+      <div>{`${naam} is bezig met React`}</div>
+      <div>Hi mom!</div>
+      <Label text={name} kleur={`blauw`} fontSize={20} />
+
+      <Button text={`klik mij!`} action={showAlert} />
     </div>
   );
-}
+};
 
 export default App;
