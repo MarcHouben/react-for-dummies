@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./styles.css";
 import Label from "./Label";
 import Button from "./Button";
+import Breadcrumbs from "./Breadcrumbs";
+import BreadcrumbItem from "./BreadcrumbItem";
 
 const App = () => {
   const [name, setName] = useState("Hello");
@@ -18,14 +20,25 @@ const App = () => {
   const naam = `${obj.firstName} ${obj.lastName}`;
 
   return (
-    <div>
-      <div style={{ color: "#F00" }}>{name.toLowerCase()}</div>
-      <div>{`${naam} is bezig met React`}</div>
-      <div>Hi mom!</div>
-      <Label text={name} kleur={`blauw`} fontSize={20} />
+    <>
+      <Breadcrumbs>
+        <BreadcrumbItem link="https://reactjs.org/" title="React" />
+        <BreadcrumbItem
+          link="https://reactjs.org/docs/jsx-in-depth.html"
+          title="JSX in depth"
+        />
+        <BreadcrumbItem title="Children" />
+      </Breadcrumbs>
 
-      <Button text={`klik mij!`} action={showAlert} />
-    </div>
+      <div>
+        <div style={{ color: "#F00" }}>{name.toLowerCase()}</div>
+        <div>{`${naam} is bezig met React`}</div>
+        <div>Hi mom!</div>
+        <Label text={name} kleur={`blauw`} fontSize={20} />
+
+        <Button text={`klik mij!`} action={showAlert} />
+      </div>
+    </>
   );
 };
 

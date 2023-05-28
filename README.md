@@ -1,3 +1,25 @@
+https://storybook.js.org/
+https://azl.dev-master.ninja/react/props/props-function
+https://www.typescriptlang.org/
+https://reactjs.org/docs/typechecking-with-proptypes.html
+https://azl.dev-master.ninja/react/introduction/setup
+http://npmjs.com/package/atomic-bomb
+
+npx create-react-app azl-react --template clean-cra
+npm install prop-types
+npx sb init
+npm run storybook
+http://localhost:6006/
+
+npx storybook@next automigrate
+npm ls --depth=1 @storybook/types
+
+By adding:
+export { default } from './[COMPONENT_NAME]'
+to index.js in each directory, we can import it by only referring to the directory itself.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
